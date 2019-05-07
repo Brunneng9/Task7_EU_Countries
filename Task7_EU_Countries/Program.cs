@@ -13,6 +13,7 @@ namespace Task7_EU_Countries
 
 		static void Main(string[] args)
 		{
+			
 			if (File.Exists(textFile))
 			{
 				string[] readFile = File.ReadAllLines(textFile);
@@ -33,9 +34,14 @@ namespace Task7_EU_Countries
 					{
 						countries[keyValue.Key].IsTelenorSupported = true;
 					}
-					 Console.WriteLine(keyValue.Key + " - " + keyValue.Value.Name + " IsTelenorSupported - " + keyValue.Value.IsTelenorSupported);
+					else
+					{
+						Console.WriteLine(keyValue.Key + " - " + keyValue.Value.Name + " IsTelenorSupported - " + keyValue.Value.IsTelenorSupported);
+					}
 				}
 			}
+			else Console.WriteLine("File not found");
+			Console.Read();
 		}
 	}
 
